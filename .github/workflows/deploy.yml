@@ -35,7 +35,7 @@ jobs:
       - name: Deploy static assets (long cache)
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --delete --exclude "index.html" --cache-control "public, max-age=31536000, immutable"
+          args: --delete --exclude "index.html" --cache-control "public,max-age=31536000,immutable"
         env:
           AWS_S3_BUCKET: ${{ secrets.YC_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
