@@ -1,0 +1,13 @@
+
+> easy-bot-app@0.1.0 test
+> craco test --watchAll=false --runInBand --runTestsByPath src/services/__tests__/auth.service.test.js --passWithNoTests
+
+PASS src/services/__tests__/auth.service.test.js
+  authService
+    √ stores tokens and returns user data on successful login (16 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        5.925 s
+Ran all test suites within paths "src/services/__tests__/auth.service.test.js".

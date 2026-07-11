@@ -1,0 +1,58 @@
+name: Deploy to Yandex Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+          REACT_APP_SENTRY_DSN: ${{ secrets.REACT_APP_SENTRY_DSN }}
+          REACT_APP_ENVIRONMENT: production
+          CI: false
+        run: npm run build
+
+      # Статика (JS/CSS/иконки/картинки) — с хешами в именах, поэтому кэшируем надолго.
+      # index.html исключаем — он заливается отдельным шагом ниже с no-cache.
+      - name: Deploy static assets (long cache)
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete --exclude "index.html" --cache-control "public, max-age=31536000, immutable"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.YC_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          AWS_S3_ENDPOINT: https://storage.yandexcloud.net
+          AWS_REGION: ru-central1
+          SOURCE_DIR: build
+
+      # index.html — отдельным aws s3 cp (не sync, он не работает с одиночными файлами),
+      # без кэша, чтобы пользователи сразу получали новую версию сайта после деплоя.
+      - name: Deploy index.html (no cache)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
+        run: |
+          aws --endpoint-url=https://storage.yandexcloud.net s3 cp \
+            build/index.html \
+            "s3://${{ secrets.YC_BUCKET_NAME }}/index.html" \
+            --cache-control "no-cache, no-store, must-revalidate"

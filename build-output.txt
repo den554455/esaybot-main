@@ -1,0 +1,6 @@
+
+> easy-bot-app@0.1.0 build
+> craco build
+
+Creating an optimized production build...
+Завершить выполнение пакетного файла [Y(да)/N(нет)]? Завершить выполнение пакетного файла [Y(да)/N(нет)]? 

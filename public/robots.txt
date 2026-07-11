@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+ User-agent: *
+ Allow: /
+ Sitemap: https://easy-bot.app/sitemap.xml
+ 
+ # Host
+ Host: https://easy-bot.app

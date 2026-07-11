@@ -1,0 +1,23 @@
+.photo-search-page {
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #1A1A1A;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+  
+  .page-header p {
+    color: #B0B0B0;
+  }

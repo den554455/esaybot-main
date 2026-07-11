@@ -1,0 +1,80 @@
+.voice-input {
+    display: inline-block;
+  }
+  
+  .voice-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 40px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .voice-trigger:hover {
+    border-color: #06FFBF;
+  }
+  
+  .voice-trigger.active {
+    background: rgba(6, 255, 191, 0.1);
+    border-color: #06FFBF;
+  }
+  
+  .voice-icon {
+    font-size: 20px;
+  }
+  
+  .voice-status {
+    color: #B0B0B0;
+    font-size: 14px;
+  }
+  
+  .voice-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  
+  .voice-button.listening {
+    background: rgba(255, 77, 77, 0.2);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .voice-wave {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  
+  .voice-wave span {
+    width: 4px;
+    height: 20px;
+    background: #06FFBF;
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+  }
+  
+  .voice-wave span:nth-child(1) { animation-delay: 0s; }
+  .voice-wave span:nth-child(2) { animation-delay: 0.2s; }
+  .voice-wave span:nth-child(3) { animation-delay: 0.4s; }
+  .voice-wave span:nth-child(4) { animation-delay: 0.6s; }
+  
+  @keyframes wave {
+    0%, 100% { height: 10px; }
+    50% { height: 20px; }
+  }

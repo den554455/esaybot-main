@@ -1,0 +1,165 @@
+.client-profile-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 80px;
+  background: #1A1A1A;
+}
+
+.client-profile-page h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.profile-card {
+  background: #0D0D0D;
+  border: 1px solid #2A2A2A;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #06FFBF;
+  color: #1A1A1A;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-role {
+  color: #06FFBF;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-email {
+  color: #B0B0B0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.profile-section {
+  background: #0D0D0D;
+  border: 1px solid #2A2A2A;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.profile-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.profile-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.edit-btn {
+  background: transparent;
+  border: 1px solid #06FFBF;
+  border-radius: 8px;
+  padding: 6px 16px;
+  color: #06FFBF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #2A2A2A;
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  color: #B0B0B0;
+  font-size: 14px;
+}
+
+.profile-value {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-form input {
+  background: #1A1A1A;
+  border: 1px solid #2A2A2A;
+  border-radius: 12px;
+  padding: 12px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.profile-form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.save-btn {
+  background: #06FFBF;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #1A1A1A;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid #2A2A2A;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #B0B0B0;
+  cursor: pointer;
+  flex: 1;
+}
+
+.profile-status {
+  color: #06FFBF;
+  font-size: 14px;
+  margin-top: 12px;
+}

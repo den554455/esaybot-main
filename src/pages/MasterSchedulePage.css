@@ -1,0 +1,176 @@
+.schedule-page {
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #1A1A1A;
+  }
+  
+  .schedule-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+  }
+  
+  .schedule-table {
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  
+  .schedule-header {
+    display: grid;
+    grid-template-columns: 100px 80px 100px 100px 180px 130px;
+    background: #2A2A2A;
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .schedule-header div {
+    color: #B0B0B0;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 100px 80px 100px 100px 180px 130px;
+    padding: 12px;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid #2A2A2A;
+  }
+  
+  .day-name {
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  
+  .schedule-row input, .schedule-row select {
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 8px;
+    padding: 8px;
+    color: #FFFFFF;
+  }
+  
+  .break-inputs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .break-inputs input {
+    width: 70px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2A2A2A;
+    transition: 0.3s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #FFFFFF;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #06FFBF;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .save-btn {
+    width: 100%;
+    background: #06FFBF;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    color: #1A1A1A;
+    font-weight: 600;
+    margin-bottom: 32px;
+    cursor: pointer;
+  }
+  
+  .exceptions-section {
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .exceptions-section h2 {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+  
+  .add-exception {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .add-exception input, .add-exception select {
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 8px;
+    padding: 10px;
+    color: #FFFFFF;
+  }
+  
+  .add-exception button {
+    background: #06FFBF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .exception-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #2A2A2A;
+    color: #B0B0B0;
+  }
+  
+  .exception-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }

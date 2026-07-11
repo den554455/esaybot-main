@@ -1,0 +1,110 @@
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1A1A1A;
+    padding: 20px;
+  }
+  
+  .auth-container {
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 24px;
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .auth-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .auth-container input {
+    width: 100%;
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .auth-container input:focus {
+    outline: none;
+    border-color: #06FFBF;
+  }
+  
+  .auth-container button[type="submit"] {
+    width: 100%;
+    background: #06FFBF;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    color: #1A1A1A;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .auth-error {
+    background: rgba(255, 77, 77, 0.2);
+    border: 1px solid #FF4D4D;
+    border-radius: 12px;
+    padding: 12px;
+    color: #FF4D4D;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .auth-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .auth-links a {
+    color: #06FFBF;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .auth-divider {
+    text-align: center;
+    color: #B0B0B0;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .auth-divider::before,
+  .auth-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #2A2A2A;
+  }
+  
+  .auth-divider::before { left: 0; }
+  .auth-divider::after { right: 0; }
+  
+  .vk-login-btn {
+    width: 100%;
+    background: #4680C2;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .form-group {
+  margin-bottom: 16px;
+}

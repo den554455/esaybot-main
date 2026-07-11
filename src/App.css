@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1A1A1A;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.app-container {
+  padding-bottom: 70px;
+}
+
+/* Стили для кнопок */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card, .master-card, .appointment-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar для WebKit */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2A2A2A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #06FFBF;
+  border-radius: 3px;
+}

@@ -1,0 +1,153 @@
+.profile-page {
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #1A1A1A;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .avatar-section {
+    position: relative;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #06FFBF;
+  }
+  
+  .upload-avatar-btn {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #06FFBF;
+    color: #1A1A1A;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .profile-info h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  
+  .profile-info h1 input {
+    font-size: 24px;
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: #FFFFFF;
+  }
+  
+  .rating {
+    color: #FFD700;
+    margin-bottom: 4px;
+  }
+  
+  .district {
+    color: #B0B0B0;
+  }
+  
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .edit-btn {
+    background: #2A2A2A;
+    color: #FFFFFF;
+  }
+  
+  .save-btn {
+    background: #06FFBF;
+    color: #1A1A1A;
+  }
+  
+  .cancel-btn {
+    background: #FF4D4D;
+    color: #FFFFFF;
+  }
+  
+  .edit-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .detail-section {
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .detail-section h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #06FFBF;
+  }
+  
+  .detail-section textarea {
+    width: 100%;
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    padding: 12px;
+    color: #FFFFFF;
+    resize: vertical;
+  }
+  
+  .detail-section input {
+    width: 100%;
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    padding: 12px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .social-links a {
+    color: #06FFBF;
+    text-decoration: none;
+  }
+  
+  .portfolio-section {
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .portfolio-section h2 {
+    margin-bottom: 16px;
+  }
