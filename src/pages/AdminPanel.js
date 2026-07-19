@@ -17,6 +17,8 @@ const AdminMasters = () => {
     first_name: '', last_name: '', district: '',
     phone: '', email: '', experience_years: 0, description: ''
   });
+  const [createdCredentials, setCreatedCredentials] = useState(null);
+  const [copied, setCopied] = useState(false);
 
     useEffect(() => { loadMasters(); }, []);
 
@@ -47,14 +49,38 @@ const AdminMasters = () => {
   const handleAddMaster = async (e) => {
     e.preventDefault();
     try {
-      await adminService.createMaster(newMaster);
+      const response = await adminService.createMaster(newMaster);
       setShowAddForm(false);
+      if (response?.temp_password) {
+        setCreatedCredentials({
+          name: `${newMaster.first_name} ${newMaster.last_name}`.trim(),
+          email: newMaster.email,
+          password: response.temp_password,
+        });
+      } else {
+        success('Мастер добавлен');
+      }
       setNewMaster({ first_name: '', last_name: '', district: '', phone: '', email: '', experience_years: 0, description: '' });
       await loadMasters();
-      success('Мастер добавлен');
     } catch (error) {
       toastError('Ошибка при добавлении мастера');
     }
+  };
+
+  const handleCopyCredentials = async () => {
+    if (!createdCredentials) return;
+    const text = `Email: ${createdCredentials.email}\nПароль: ${createdCredentials.password}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+    } catch (error) {
+      errorHandler.log(error, 'AdminPanel: Error copying credentials to clipboard');
+    }
+  };
+
+  const closeCredentialsModal = () => {
+    setCreatedCredentials(null);
+    setCopied(false);
   };
 
   if (loading) return <LoadingSpinner text="Загрузка мастеров..." />;
@@ -83,6 +109,30 @@ const AdminMasters = () => {
                 <button type="submit">Добавить</button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {createdCredentials && (
+        <div className="modal-overlay" onClick={closeCredentialsModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <h3>✅ Мастер добавлен</h3>
+            <p>
+              Временный пароль показывается <strong>один раз</strong> — сохраните его сейчас
+              и передайте мастеру. После первого входа мастер должен сменить пароль
+              в настройках профиля.
+            </p>
+            <div className="credentials-box" style={{ background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '8px', margin: '12px 0' }}>
+              <div><strong>{createdCredentials.name}</strong></div>
+              <div>Email: {createdCredentials.email}</div>
+              <div>Пароль: <code>{createdCredentials.password}</code></div>
+            </div>
+            <div className="modal-actions">
+              <button type="button" onClick={handleCopyCredentials}>
+                {copied ? '✓ Скопировано' : '📋 Скопировать'}
+              </button>
+              <button type="button" onClick={closeCredentialsModal}>Готово</button>
+            </div>
           </div>
         </div>
       )}

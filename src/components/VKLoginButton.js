@@ -14,7 +14,7 @@ const VKLoginButton = () => {
     const loadVK = async () => {
       if (window.VKIDSDK) { initVK(); return; }
       const script = document.createElement('script');
-      script.src = 'https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js';
+      script.src = 'https://unpkg.com/@vkid/sdk@2.6.2/dist-sdk/umd/index.js';
       script.async = true;
       script.onload = initVK;
       document.body.appendChild(script);
