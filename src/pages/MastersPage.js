@@ -459,6 +459,20 @@ const MastersPage = () => {
                       </a>
                     </div>
                   )}
+                  {selectedMaster.address && (
+                    <div className="info-block">
+                      <h4>📍 Адрес</h4>
+                      <p>{selectedMaster.address}</p>
+                      <a
+                        {...createSafeLinkProps(
+                          `https://yandex.ru/maps/?text=${encodeURIComponent(selectedMaster.address)}`
+                        )}
+                        className="contact-link"
+                      >
+                        Открыть на карте →
+                      </a>
+                    </div>
+                  )}
                 </div>
               )}
               {activeMasterTab === 'portfolio' && (
