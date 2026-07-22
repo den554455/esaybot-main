@@ -4,7 +4,7 @@
 
 ```bash
 # 1. Перейти в папку проекта
-cd ~/my-app
+cd C:\Users\pc-denis\Desktop\esaybot-main
 
 # 2. Посмотреть что изменилось
 git status
